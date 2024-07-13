@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Local Bus Tracking</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Contact Us</h1>
+        <p>We're here to help with your bus tracking needs.</p>
+    </header>
+    <main>
+        <section id="contactSection" class="contact-section animate__animated">
+            <div class="toggle-headings">
+                <h2 id="getInTouch">Get in Touch</h2>
+                <h2 id="contactDetailsHeading">Contact Details</h2>
+            </div>
+            <div id="contactDetails" class="contact-details animate__animated hidden">
+                <p><strong>Phone Number:</strong> +1 (234) 567-890</p>
+                <p><strong>Email:</strong> support@bustracker.com</p>
+                <p><strong>Office Address:</strong> 123 Bus Lane, Transport City, Country</p>
+                <p><strong>Office Hours:</strong> Monday - Friday, 9 AM - 5 PM</p>
+            </div>
+            <div id="contactFormSection" class="contact-form animate__animated">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </section>
+        <section class="faqs animate__animated animate__fadeInUp animate__delay-1s">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq">
+                <button class="faq-question">How can I track my bus?<span class="arrow">▼</span></button>
+                <div class="faq-answer">
+                    <p>You can track your bus using our real-time bus tracking system available on our website and mobile app.</p>
+                </div>
+            </div>
+            <div class="faq">
+                <button class="faq-question">What should I do if I miss my bus?<span class="arrow">▼</span></button>
+                <div class="faq-answer">
+                    <p>If you miss your bus, you can check the schedule for the next available bus on our website or app.</p>
+                </div>
+            </div>
+            <div class="faq">
+                <button class="faq-question">How do I report a lost item?<span class="arrow">▼</span></button>
+                <div class="faq-answer">
+                    <p>If you have lost an item on the bus, please contact our customer service with the details of your lost item and bus route.</p>
+                </div>
+            </div>
+            <div class="faq">
+                <button class="faq-question">Can I get a refund for my bus ticket?<span class="arrow">▼</span></button>
+                <div class="faq-answer">
+                    <p>Refunds are available under certain conditions. Please contact our customer service for more details.</p>
+                </div>
+            </div>
+            <div class="faq">
+                <button class="faq-question">How do I report a delay or issue with the bus?<span class="arrow">▼</span></button>
+                <div class="faq-answer">
+                    <p>You can report delays or issues through our website or mobile app. Alternatively, you can contact our customer service directly.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="scripts.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</body>
+</html>

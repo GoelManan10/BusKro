@@ -1,0 +1,97 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Service</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="logo_bus_kro.svg" alt="BusKro Logo" class="logo">
+        <h1>Find Your Bus</h1>
+    </header>
+    <main>
+        <div class="form-container">
+            <form id="busForm">
+                <div class="input-group">
+                    <label for="departure">Departure</label>
+                    <label for="destination" class="destination-label">Destination</label>
+                    <input type="text" id="departure" name="departure" placeholder="Enter departure" required>
+                    
+                    <button type="button" id="swapBtn">&#x21C5;</button>
+                    
+    
+                    <input type="text" id="destination" name="destination" placeholder="Enter destination" required>
+                    
+                     
+                </div>
+                <!-- <button type="submit">Search</button> -->
+                 <button id="searchbtn">
+                        <span> Search
+                        </span>
+                      </button>
+            </form>
+        </div>
+        <div id="results">
+            <h2>Available Bus Services</h2>
+            <a style="text-decoration: none; color: black;" href="https://www.google.com/maps/dir/Rajiv+Chowk,+Block+B,+Connaught+Place,+New+Delhi,+Delhi+110001/Punjabi+Bagh+West,+Punjabi+Bagh+Chowk,+West+Punjabi+Bagh,+Punjabi+Bagh,+New+Delhi,+Delhi,+110026/@28.6690629,77.0944466,12z/data=!3m1!4b1!4m18!4m17!1m5!1m1!1s0x390cfd37ebbdf4af:0x2be7eefccedf4b84!2m2!1d77.219374!2d28.632986!1m5!1m1!1s0x390d03afd09e903d:0x7e928c619c7ee3b9!2m2!1d77.13918!2d28.67274!2m3!5e0!5e1!5e3!3e3?entry=ttu/">
+            <ul ><li id="busList"><span id="busNum"></span></li><br><li style="list-style-type: none;" id="bus_fare"></li></ul></a>
+
+        </div>
+    </main>
+
+    <script>
+        document.getElementById('swapBtn').addEventListener('click', function() {
+            const departureInput = document.getElementById('departure');
+            const destinationInput = document.getElementById('destination');
+            const temp = departureInput.value;
+            departureInput.value = destinationInput.value;
+            destinationInput.value = temp;
+        });
+
+        document.getElementById('busForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const departure = document.getElementById('departure').value;
+            const destination = document.getElementById('destination').value;
+            const busList = document.getElementById('busList');
+            const busNum = document.getElementById('busNum');
+
+            // Dummy data for bus services
+            const buses = [
+                { id: 1, name: 'Bus 101', departure: 'Rajiv Chowk', destination: 'Punjabi bagh west' ,Number:'DL 91 AD 4875',fare:15},
+                { id: 2, name: 'Bus 102', departure: 'Punjabi bagh west', destination: 'Rajiv Chowk' ,Number:'DL 05 AL 8745',fare:50},
+                { id: 3, name: 'Bus 103', departure: 'Tilak Nagar', destination: 'ISBT Kashmere Gate',Number:'DL 11 O 2736' ,fare:30},
+                { id: 4, name: 'Bus 104', departure: 'ISBT Kashmere Gate', destination: 'Tilak Nagar' ,Number:'DL 02 LA 1254',fare:95},
+                { id: 5, name: 'Bus 105', departure: 'Tilak Nagar', destination: 'Rajiv Chowk' ,Number:'DL 91 AD 7451',fare:85},
+                { id: 5, name: 'Bus 105', departure: 'Rajiv Chowk', destination: 'Tilak Nagar',Number:'DL 09 KM 1175' ,fare:70},
+                { id: 5, name: 'Bus 105', departure: 'Punjabi bagh west', destination: 'Tilak Nagar',Number:'DL 55 PA 5415', fare:40 },
+                { id: 5, name: 'Bus 105', departure: 'Tilak Nagar', destination: 'Punjabi bagh west',Number:'DL 03 AP 9774 ' ,fare:70},
+                // Add more bus services as needed
+            ];
+
+            // Clear previous results
+            busList.innerHTML = '';
+            busNum.innerHTML = '';
+            bus_fare.innerHTML = '';
+
+            // Filter and display bus services
+            const filteredBuses = buses.filter(bus => bus.departure === departure && bus.destination === destination);
+            if (filteredBuses.length > 0) {
+                filteredBuses.forEach(bus => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = `${bus.name} from ${bus.departure} --> ${bus.destination}`;
+                    busList.appendChild(listItem);
+                    const listBusNo = document.createElement('span');
+                    listBusNo.textContent = `${bus.Number}`;
+                    busList.appendChild(listBusNo);
+                    const bus_fare = document.createElement('bus_fare');
+                    bus_fare.textContent = `Fare: ${bus.fare}`;
+                    busList.appendChild(bus_fare);
+                });
+            } else {
+                busList.innerHTML = '<li>No bus services available for this route.</li>';
+            }
+        });
+    </script>
+</body>
+</html>

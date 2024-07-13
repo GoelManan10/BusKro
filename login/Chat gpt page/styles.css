@@ -1,0 +1,199 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header {
+    background-color: #2e8b57;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.logo {
+    width: 80px;
+    height: auto;
+    margin-right: 20px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#busForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 800px;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+label {
+    display: none;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 15px;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    box-sizing: border-box;
+    transition: border-color 0.3s, box-shadow 0.3s, width 0.3s;
+    width: 200px;
+}
+
+input[type="text"]:focus {
+    border-color: #80bdff;
+    outline: none;
+    box-shadow: 0 0 8px rgba(128, 189, 255, 0.5);
+    width: 300px;
+}
+
+button {
+    padding: 15px 25px;
+    background-color: #2e8b57;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #256d45;
+    transform: translateY(-2px);
+}
+
+#swapBtn {
+    padding: 15px;
+    background-color: #2e8b57;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#swapBtn:hover {
+    background-color: #256d45;
+    transform: rotate(180deg);
+}
+
+#results {
+    width: 100%;
+    margin-top: 20px;
+}
+
+#results h2 {
+    text-align: center;
+    color: #2e8b57;
+    font-size: 20px;
+}
+
+#busList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#busList li {
+    width: 100%;
+    max-width: 800px;
+    padding: 15px;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    background-color: #f8f9fa;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#busList li:hover {
+    background-color: #e2e6ea;
+    transform: translateY(-2px);
+}
+/*  Search BTN */
+
+/* From uiverse.io by @Ali-Tahmazi99 */
+#searchbtn {
+    display: inline-block;
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid #71ddab;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s ease-in;
+    z-index: 1;
+   }
+   
+   #searchbtn::before,
+   #searchbtn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 0;
+    height: 100%;
+    transform: skew(15deg);
+    transition: all 0.5s;
+    overflow: hidden;
+    z-index: -1;
+   }
+   
+   #searchbtn::before {
+    left: -10px;
+    background: green;
+   }
+   
+   #searchbtn::after {
+    right: -10px;
+    background: seagreen;
+   }
+   
+   #searchbtn:hover::before,
+   #searchbtn:hover::after {
+    width: 58%;
+   }
+   
+   #searchbtn:hover span {
+    color: #e0aaff;
+    transition: 0.3s;
+   }
+   
+   #searchbtn span {
+    color: #ffffff;
+    font-size: 18px;
+    transition: all 0.3s ease-in;
+   }
+/*  Search BTN Ends */
